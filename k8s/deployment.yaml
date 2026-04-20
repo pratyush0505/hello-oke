@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-oke
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hello-oke
+  template:
+    metadata:
+      labels:
+        app: hello-oke
+    spec:
+      containers:
+      - name: hello-oke
+        image: <IMAGE_PLACEHOLDER>
+        ports:
+        - containerPort: 3000
